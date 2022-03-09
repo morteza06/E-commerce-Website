@@ -63,8 +63,12 @@ class CheckoutView(View):
 
 class PaymentView(View):
     def get(self, *arg, **kwargs):
+        # order
         return render(self.request, "payment.html")
 
+    def post(self, *args, **kwargs):
+        order = Order.objects.get(user=self.request.user, ordered=False)
+        token
 
 class HomeView(ListView):
     model = Item
