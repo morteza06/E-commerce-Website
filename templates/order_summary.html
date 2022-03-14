@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-  <!--Main layout-->
   <main>
     <div class="container">
         <div class="table-responsive text-nowarp">
@@ -32,7 +31,7 @@
                         </td>
                         <td> 
                         {% if order_item.item.discount_price %}
-                            ${{ order_item.get_total_discount_item_price }}
+                            ${{ order_item.get_total_item_price}}
                             <span class="badge bg-primary"> Saving  ${{ order_item.get_amount_saved }}</span>
                         {% else %}
                             ${{ order_item.get_total_item_price }}
@@ -52,6 +51,13 @@
                         </td>
                     </tr>
                     {% endfor %}
+                    
+                    {% if object.coupon %}
+                    <tr>
+                        <td colspan="4"><b>Coupon</b></td>
+                        <td><b>-${{ object.coupon.amount }}</b></td>
+                    </tr>
+                    {% endif %}
                     {% if object.get_total %}
                     <tr>
                         <td colspan="4"><b>Order Total</b></td>
@@ -67,11 +73,7 @@
                     </tbody>
             </table>
           </div>
-          
-         
-
     </div>
   </main>
-  <!--Main layout-->
 {% endblock content %}
  

@@ -62,7 +62,7 @@ USE_TZ = True
 
 STATIC_URL = '/static_files/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_files')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -85,13 +85,16 @@ LOGIN_REDIRECT_URL ='/'
 # CRISPY FORMS
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+
+STRIPE_SECRET_KEY = 'sk_test_4eC39HqLyjWDarjtT1zdp7dc'
+
 if ENVIRONMENT == 'production':
     DEBUG = False
     SECRET_KEY = os.getenv('SECRET_KEY')
     SESSION_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True 
     SECURE_HSTS_SECONDS = 31536000
     SECURE_REDIRECT_EXEMPT = []
     SECURE_SSL_REDIRECT = True

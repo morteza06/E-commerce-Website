@@ -10,8 +10,10 @@
 
         <!--Grid column-->
         <div class="col-md-6 mb-4">
-
+          {% comment %}
           <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt="">
+          {% endcomment %}
+          <img src="{{ item.image.url }}" class="img-fluid">
 
         </div>
         <!--Grid column-->
@@ -35,32 +37,26 @@
             </div>
 
             <p class="lead">
+              {% if object.discount_price %}
               <span class="mr-1">
-                <del>
-                  {% if object.discount_price %}
-                  ${{ object.discount_price }}
-                  {% endif %}
-                </del>
+                <del>${{ object.price }}</del>
               </span>
+              <span>${{ object.discount_price }}</span>
+              {% else %}
               <span>${{ object.price }}</span>
+              {% endif %}
             </p>
 
             <p class="lead font-weight-bold">Description</p>
 
             <p>{{ object.description }} </p>
 
-            <!-- Default input -->
-            <!-- <form class="d-flex justify-content-left">
-              <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-              <button class="btn btn-primary btn-md my-0 p" type="submit">
-                Add to cart
-                <i class="fas fa-shopping-cart ml-1"></i>
-              </button>
-            </form>  -->
+
             <a class="btn btn-primary btn-md my-0 p" href="{{ object.get_add_to_cart_url }}">
               Add to cart
               <i class="fas fa-shopping-cart ml-1"></i>
             </a>
+            
             <a class="btn btn-danger btn-md my-0 p" href="{{ object.get_remove_from_cart_url }}">
               Remove from cart
               <i class="fas fa-shopping-cart ml-1"></i>
