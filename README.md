@@ -9,7 +9,7 @@
   </p>
 </p>
 
-# Django Project Boilerplate
+# Django Project Boilerplate and Ecommerce website
 
 This repository is a boilerplate Django project for quickly getting started.
 
