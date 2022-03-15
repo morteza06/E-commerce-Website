@@ -1,11 +1,16 @@
-{% extends "account/base.html" %}
-
+{% extends "base.html" %}
 {% load i18n %}
-
 {% block head_title %}{% trans "Account Inactive" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Account Inactive" %}</h1>
-
-<p>{% trans "This account is inactive." %}</p>
+<div class="container">
+    <section class="mb-4">
+      <div class="row wow fadeIn">
+        <div class="col-5 offset-5">
+            <h1>{% trans "Account Inactive" %}</h1>
+            <p>{% trans "This account is inactive." %}</p>
+        </div>
+    </div>
+  </section>
+</div>
 {% endblock %}
