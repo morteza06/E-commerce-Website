@@ -9,12 +9,9 @@
   </p>
 </p>
 
-<<<<<<< HEAD
+
 # Django Project Boilerplate And Ecommerce Project
 =======
-# Django Project Boilerplate and Ecommerce website
->>>>>>> 7466a6e9a06645d1de91efeedfb8e28d92a79269
-
 This repository is a boilerplate Django project for quickly getting started and implementation Ecommerce project.
 
 <p align="center">
@@ -30,18 +27,3 @@ Steps:
 3. Configure your .env variables
 4. Rename your project with `python manage.py rename <yourprojectname> <newprojectname>`
 
-This project includes:
- 
-1. Django commands for renaming your project and creating a superuser
- 
-
-<<<<<<< HEAD
----
-
-<div align="center">
- 
- 
-
-</div>
-=======
->>>>>>> 7466a6e9a06645d1de91efeedfb8e28d92a79269
